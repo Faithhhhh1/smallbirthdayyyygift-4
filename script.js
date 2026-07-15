@@ -96,9 +96,14 @@ function onYouTubeIframeAPIReady() {
 
     events: {
       onReady: (event) => {
-        console.log("READY");
-        event.target.playVideo();
-      },
+  console.log("READY");
+
+  event.target.playVideo();
+
+  setTimeout(() => {
+    console.log("Player State:", event.target.getPlayerState());
+  }, 1500);
+},
 
       onStateChange: (event) => {
         console.log("STATE:", event.data);
