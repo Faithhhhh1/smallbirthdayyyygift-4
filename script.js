@@ -88,41 +88,38 @@ function onYouTubeIframeAPIReady() {
 
     videoId: "1T7I4dvE2t0",
 
-  player = new YT.Player("player", {
-
-  videoId: "1T7I4dvE2t0",
-
-  playerVars: {
-    autoplay: 1,
-    controls: 0,
-    rel: 0,
-    playsinline: 1,
-    origin: "https://faithhhhh1.github.io"
-  },   // <-- comma here
-
-  events: {
-    onReady: (event) => {
-  console.log("READY");
-
-  setTimeout(() => {
-    event.target.playVideo();
-
-    console.log("Player state:", event.target.getPlayerState());
-    console.log("Current time:", event.target.getCurrentTime());
-    console.log("Video URL:", event.target.getVideoUrl());
-  }, 1000);
-},
-
-    onStateChange: (event) => {
-      console.log("STATE:", event.data);
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      rel: 0,
+      playsinline: 1,
+      origin: "https://faithhhhh1.github.io"
     },
 
-    onError: (event) => {
-      console.log("ERROR:", event.data);
-    }
-  }
+    events: {
+      onReady: (event) => {
+        console.log("READY");
 
-});
+        setTimeout(() => {
+          event.target.playVideo();
+
+          console.log("Player state:", event.target.getPlayerState());
+          console.log("Current time:", event.target.getCurrentTime());
+          console.log("Video URL:", event.target.getVideoUrl());
+        }, 1000);
+      },
+
+      onStateChange: (event) => {
+        console.log("STATE:", event.data);
+      },
+
+      onError: (event) => {
+        console.log("ERROR:", event.data);
+      }
+    }
+
+  });
+
 }
 
 /* ---------- START EXPERIENCE ---------- */
