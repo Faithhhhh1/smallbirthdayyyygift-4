@@ -89,26 +89,21 @@ function onYouTubeIframeAPIReady() {
     videoId: "1T7I4dvE2t0",
 
     playerVars: {
-      autoplay: 1,
-      controls: 0,
-      rel: 0,
-      playsinline: 1,
-      origin: "https://faithhhhh1.github.io"
-    },
-
+    autoplay: 1,
+    controls: 0,
+    rel: 0,
+    playsinline: 1,
+    enablejsapi: 1
+},
     events: {
       onReady: (event) => {
-        console.log("READY");
+    event.target.setVolume(100);
+    event.target.unMute();
 
-        setTimeout(() => {
-          event.target.playVideo();
-
-          console.log("Player state:", event.target.getPlayerState());
-          console.log("Current time:", event.target.getCurrentTime());
-          console.log("Video URL:", event.target.getVideoUrl());
-        }, 1000);
-      },
-
+    setTimeout(() => {
+        event.target.playVideo();
+    }, 1000);
+},
       onStateChange: (event) => {
         console.log("STATE:", event.data);
       },
