@@ -1,0 +1,452 @@
+:root{
+  --pink:#ff7fbd;
+}
+
+
+/* ---------- RESET ---------- */
+
+*{
+  box-sizing:border-box;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+
+  margin:0;
+
+  font-family:
+  Arial,
+  sans-serif;
+
+
+  background:#000;
+
+  color:white;
+
+  overflow-x:hidden;
+
+}
+
+
+
+/* ---------- NIGHT SKY BACKGROUND ---------- */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+
+  background:
+
+  radial-gradient(
+    circle at 30% 20%,
+    #142850 0%,
+    transparent 60%
+  ),
+
+
+  radial-gradient(
+    circle at 70% 80%,
+    #07111f 0%,
+    #000 65%
+  );
+
+
+  z-index:-10;
+
+}
+
+
+
+/* ---------- STARS ---------- */
+
+.star{
+
+  position:fixed;
+
+  width:2px;
+
+  height:2px;
+
+
+  background:white;
+
+  border-radius:50%;
+
+
+  opacity:.3;
+
+
+  pointer-events:none;
+
+
+  animation:
+  twinkle 6s infinite ease-in-out;
+
+}
+
+
+
+@keyframes twinkle{
+
+  0%,100%{
+    opacity:.2;
+  }
+
+
+  50%{
+    opacity:.8;
+  }
+
+}
+
+/* ---------- FLOATING HEARTS 💗 ---------- */
+
+
+.heart{
+
+
+  position:fixed;
+
+
+  top:-40px;
+
+
+  pointer-events:none;
+
+
+  animation:
+
+  heartFall linear forwards;
+
+
+  opacity:.85;
+
+
+  z-index:-1;
+
+
+}
+
+
+
+@keyframes heartFall{
+
+
+  0%{
+
+
+    transform:
+
+    translateY(0)
+
+    rotate(0deg);
+
+
+    opacity:1;
+
+
+  }
+
+
+
+  100%{
+
+
+    transform:
+
+    translateY(120vh)
+
+    rotate(360deg);
+
+
+    opacity:0;
+
+
+  }
+
+
+}
+
+/* ---------- MAIN ---------- */
+
+
+#main{
+
+  min-height:100vh;
+
+}
+
+
+
+.container{
+
+
+  max-width:520px;
+
+  margin:auto;
+
+
+  padding:
+
+  30px 22px;
+
+
+  text-align:center;
+
+
+}
+
+
+
+/* ---------- TITLE ---------- */
+
+
+.title{
+
+
+  font-size:32px;
+
+
+  color:#ffd6eb;
+
+
+  text-shadow:
+
+  0 0 15px
+  rgba(255,120,190,.8);
+
+
+  margin-bottom:15px;
+
+
+}
+
+
+
+.intro{
+
+
+  font-size:15px;
+
+
+  line-height:1.7;
+
+
+  opacity:.85;
+
+
+  margin-bottom:40px;
+
+
+}
+
+
+
+
+
+
+/* ---------- PHOTO GALLERY ---------- */
+
+
+#gallery{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:35px;
+
+}
+
+
+
+.photo img{
+
+
+  width:100%;
+
+
+  border-radius:20px;
+
+
+  opacity:0;
+
+
+  transform:
+
+  translateY(45px)
+
+  scale(.95);
+
+
+
+  transition:
+
+  1.2s ease;
+
+
+
+  box-shadow:
+
+
+  0 0 30px
+  rgba(255,120,190,.45);
+
+
+
+}
+
+
+
+.photo.show img{
+
+
+  opacity:1;
+
+
+  transform:none;
+
+
+}
+
+
+
+
+
+
+
+/* ---------- END MESSAGE ---------- */
+
+
+.ending{
+
+
+  margin-top:120px;
+
+
+  padding-bottom:100px;
+
+
+  opacity:0;
+
+
+  transition:
+
+  opacity 2.5s ease;
+
+
+}
+
+
+
+.ending.show{
+
+
+  opacity:1;
+
+
+}
+
+
+
+.ending h2{
+
+
+  color:#ffd1e8;
+
+
+  text-shadow:
+
+  0 0 15px
+  rgba(255,120,190,.7);
+
+
+}
+
+
+
+#typedText{
+
+
+  margin-top:20px;
+
+
+  font-size:16px;
+
+
+  line-height:1.8;
+
+
+  opacity:.9;
+
+
+}
+
+
+
+#finalLove{
+
+
+  margin-top:35px;
+
+
+  font-size:22px;
+
+
+  opacity:0;
+
+
+  transition:
+
+  opacity 3s ease;
+
+
+
+  color:#ffd1e8;
+
+
+}
+
+
+
+#finalLove.show{
+
+
+  opacity:1;
+
+
+}
+
+
+/* ---------- MUSIC PLAYER HIDDEN ---------- */
+
+
+#player{
+
+
+  position:fixed;
+
+
+  width:1px;
+
+
+  height:1px;
+
+
+  opacity:0;
+
+
+  left:-9999px;
+
+
+}
