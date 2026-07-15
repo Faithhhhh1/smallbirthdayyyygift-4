@@ -82,32 +82,31 @@ function loadMusic(){
 
 }
 
+function onYouTubeIframeAPIReady() {
 
+  player = new YT.Player("player", {
 
-function onYouTubeIframeAPIReady(){
+    videoId: "1T7I4dvE2t0",
 
-
-  player =
-  new YT.Player("player",{
-
-
-    videoId:"1T7I4dvE2t0",
-
-
-    playerVars:{
-      autoplay:1,
-      loop:1,
+    playerVars: {
+      autoplay: 1,
+      loop: 1,
       playlist: "1T7I4dvE2t0"
-
     },
 
-
-    events:{
-
-      onReady:event=>{
+    events: {
+      onReady: (event) => {
+        console.log("READY");
         event.target.playVideo();
-      }
+      },
 
+      onStateChange: (event) => {
+        console.log("STATE:", event.data);
+      },
+
+      onError: (event) => {
+        console.log("ERROR:", event.data);
+      }
     }
 
   });
