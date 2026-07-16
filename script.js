@@ -102,12 +102,20 @@ window.onYouTubeIframeAPIReady = function () {
         }, 1000);
       },
       onStateChange: (event) => {
-        console.log("STATE:", event.data);
-      },
-      onError: (event) => {
-        console.log("ERROR:", event.data);
-      }
+    console.log("STATE:", event.data);
+
+    switch (event.data) {
+        case YT.PlayerState.UNSTARTED:
+            console.log("UNSTARTED");
+            break;
+        case YT.PlayerState.PLAYING:
+            console.log("PLAYING");
+            break;
+        case YT.PlayerState.PAUSED:
+            console.log("PAUSED");
+            break;
     }
+}
   });
 };
 
