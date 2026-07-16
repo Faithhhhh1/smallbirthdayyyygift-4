@@ -82,40 +82,34 @@ function loadMusic(){
 
 }
 
-function onYouTubeIframeAPIReady() {
-
+window.onYouTubeIframeAPIReady = function () {
   player = new YT.Player("player", {
-
     videoId: "1T7I4dvE2t0",
-
     playerVars: {
-    autoplay: 1,
-    controls: 0,
-    rel: 0,
-    playsinline: 1,
-    enablejsapi: 1
-},
+      autoplay: 1,
+      controls: 0,
+      rel: 0,
+      playsinline: 1,
+      enablejsapi: 1
+    },
     events: {
       onReady: (event) => {
-    event.target.setVolume(100);
-    event.target.unMute();
+        event.target.setVolume(100);
+        event.target.unMute();
 
-    setTimeout(() => {
-        event.target.playVideo();
-    }, 1000);
-},
+        setTimeout(() => {
+          event.target.playVideo();
+        }, 1000);
+      },
       onStateChange: (event) => {
         console.log("STATE:", event.data);
       },
-
       onError: (event) => {
         console.log("ERROR:", event.data);
       }
     }
-
   });
-
-}
+};
 
 /* ---------- START EXPERIENCE ---------- */
 
