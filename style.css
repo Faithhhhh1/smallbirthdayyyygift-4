@@ -65,8 +65,102 @@ body::before{
 
 }
 
+#musicButton{
+    position:fixed;
+    top:22px;
+    right:22px;
 
+    width:64px;
+    height:64px;
 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    cursor:pointer;
+
+    font-size:30px;
+    color:#fff;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 0 12px rgba(255,170,220,.45),
+        0 0 28px rgba(255,120,200,.35),
+        inset 0 1px 10px rgba(255,255,255,.25);
+
+    transition:.35s ease;
+
+    z-index:9999;
+}
+
+#musicButton:hover{
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 22px rgba(255,170,220,.9),
+        0 0 45px rgba(255,120,200,.65),
+        inset 0 1px 12px rgba(255,255,255,.35);
+}
+
+#musicButton:active{
+    transform:scale(.94);
+}
+
+#musicButton.playing{
+    animation:
+        musicGlow 2.2s ease-in-out infinite,
+        floatMusic 4s ease-in-out infinite;
+}
+@keyframes floatMusic{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+@keyframes musicGlow{
+
+    0%,100%{
+        box-shadow:
+            0 0 14px rgba(255,170,220,.45),
+            0 0 28px rgba(255,120,200,.35),
+            inset 0 1px 10px rgba(255,255,255,.25);
+    }
+
+    50%{
+        box-shadow:
+            0 0 30px rgba(255,170,220,.95),
+            0 0 65px rgba(255,120,200,.8),
+            inset 0 1px 12px rgba(255,255,255,.4);
+    }
+}
+#musicButton::before{
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    top:12px;
+    left:14px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.45);
+
+    filter:blur(3px);
+
+    pointer-events:none;
+}
 /* ---------- STARS ---------- */
 
 .star{
