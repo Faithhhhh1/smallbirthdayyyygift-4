@@ -70,8 +70,8 @@ body::before{
     top:22px;
     right:22px;
 
-    width:52px;
-    height:52px;
+    width:48px;
+    height:48px;
 
     display:flex;
     justify-content:center;
@@ -80,10 +80,10 @@ body::before{
     border-radius:50%;
     cursor:pointer;
 
-    font-size:24px;
+    font-size:20px;
     color:#fff;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
 
@@ -147,15 +147,15 @@ body::before{
 
     position:absolute;
 
-    width:14px;
-    height:14px;
+    width:12px;
+    height:12px;
 
-    top:10px;
-    left:12px;
+    top:8px;
+    left:10px;
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.30);
 
     filter:blur(3px);
 
