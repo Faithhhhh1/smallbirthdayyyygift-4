@@ -83,40 +83,43 @@ function loadMusic(){
 }
 
 window.onYouTubeIframeAPIReady = function () {
-  player = new YT.Player("player", {
-    videoId: "1T7I4dvE2t0",
-    playerVars: {
-  autoplay: 1,
-  mute: 1,
-  controls: 0,
-  playsinline: 1,
-  rel: 0
-}
-    events: {
-      onReady: (event) => {
-        event.target.setVolume(100);
-        event.target.unMute();
+    player = new YT.Player("player", {
+        videoId: "1T7I4dvE2t0",
+
+        playerVars: {
+    autoplay: 1,
+    controls: 0,
+    rel: 0,
+    playsinline: 1,
+    mute: 1,
+    loop: 1,
+    playlist: "1T7I4dvE2t0",
+    enablejsapi: 1,
+    origin: window.location.origin
+},
+
+        events: {
+            onReady: (event) => {
+    player = event.target;
+
+    player.setVolume(100);
+
+    const tryPlay = () => {
+        player.playVideo();
 
         setTimeout(() => {
-          event.target.playVideo();
-        }, 1000);
-      },
-      onStateChange: (event) => {
-    console.log("STATE:", event.data);
+            player.unMute();
+            player.setVolume(100);
+        }, 500);
+    };
 
-    switch (event.data) {
-        case YT.PlayerState.UNSTARTED:
-            console.log("UNSTARTED");
-            break;
-        case YT.PlayerState.PLAYING:
-            console.log("PLAYING");
-            break;
-        case YT.PlayerState.PAUSED:
-            console.log("PAUSED");
-            break;
-    }
+    tryPlay();               // immediately
+    setTimeout(tryPlay, 1000);
+    setTimeout(tryPlay, 3000);
+    setTimeout(tryPlay, 5000);
 }
-  });
+        }
+    });
 };
 
 /* ---------- START EXPERIENCE ---------- */
