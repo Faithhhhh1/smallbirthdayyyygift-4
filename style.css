@@ -67,11 +67,11 @@ body::before{
 
 #musicButton{
     position:fixed;
-    top:22px;
-    right:22px;
+    top:20px;
+    right:20px;
 
-    width:48px;
-    height:48px;
+    width:45px;
+    height:45px;
 
     display:flex;
     justify-content:center;
@@ -147,15 +147,15 @@ body::before{
 
     position:absolute;
 
-    width:12px;
-    height:12px;
+    width:10px;
+    height:10px;
 
     top:8px;
     left:10px;
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.30);
+    background:rgba(255,255,255,.28);
 
     filter:blur(3px);
 
