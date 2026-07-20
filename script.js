@@ -178,9 +178,9 @@ function buildGallery(){
 
 
 
-  // ONLY 10 IMAGES ❤️
+  // ONLY 12 IMAGES ❤️
 
-  for(let i = 1; i <= 10; i++){
+  for(let i = 1; i <= 12; i++){
 
 
     const photo =
